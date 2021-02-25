@@ -1,7 +1,8 @@
-// import { withTranslation } from "react-i18next";
 
 import * as S from "./styles";
 
+
+// reusable input field
 const Input = ({ id, name, placeholder, onChange }) => (
   <S.Container>
     <label htmlFor={name}>{id}</label>

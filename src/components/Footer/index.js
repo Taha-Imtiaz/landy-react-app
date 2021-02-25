@@ -9,8 +9,8 @@ import SvgIcon from "../SvgIcon";
 import Container from "../Container";
 
 
-
-const Footer = ({ t }) => {
+// footer component
+const Footer = () => {
   const handleChange = (event) => {
     // i18n.changeLanguage(event.target.value);
   };

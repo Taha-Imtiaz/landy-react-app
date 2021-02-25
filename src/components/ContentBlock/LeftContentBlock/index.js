@@ -8,6 +8,7 @@ import * as S from "./styles";
 
 const LeftContentBlock = ({ icon, title, content, section, id }) => {
   return (
+    //section renders when image is on the left side
     <S.LeftContentBlock>
       <Row type="flex" justify="space-between" align="middle" id={id}>
         <Col lg={11} md={11} sm={12} xs={24}>

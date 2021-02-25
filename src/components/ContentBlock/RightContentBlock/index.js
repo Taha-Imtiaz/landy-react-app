@@ -15,6 +15,7 @@ const RightBlock = ({ title, content, button, icon, t, id }) => {
     });
   };
   return (
+    //section renders when image is on the right side
     <S.RightBlockContainer>
       <Row type="flex" justify="space-between" align="middle" id={id}>
         <Col lg={11} md={11} sm={11} xs={24}>

@@ -5,6 +5,7 @@ import * as S from "./styles";
 const Input = () => {
   const scrollUp = () => {
     const element = document.getElementById("intro");
+    console.log(element)
     element.scrollIntoView({
       behavior: "smooth",
       block: "end",

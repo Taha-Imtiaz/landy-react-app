@@ -1,7 +1,7 @@
 // import { withTranslation } from "react-i18next";
 
 import * as S from "./styles";
-
+//reusable textarea field
 const TextArea = ({ name, id, placeholder, onChange }) => (
   <S.Container>
     <label htmlFor={name}>{id}</label>

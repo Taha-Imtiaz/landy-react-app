@@ -7,13 +7,15 @@ import Button from "../Button";
 
 
 
-const MiddleBlock = ({ title, content, button, t }) => {
+const MiddleBlock = ({ title, content, button }) => {
   const scrollTo = (id) => {
     const element = document.getElementById(id);
     element.scrollIntoView({
       behavior: "smooth",
     });
   };
+
+  // product introduction section (middle blaock)
   return (
     <S.MiddleBlock>
       <Row type="flex" justify="center" align="middle">

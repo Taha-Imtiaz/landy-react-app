@@ -16,7 +16,9 @@ import ScrollToTop from "../../components/ScrollToTop"
 const Home = () => {
   return (
     <Container>
+      {/* show scroll-top icon on home page */}
      <ScrollToTop/>
+     {/* Landing page template section */}
       <ContentBlock
         type="right"
         first="true"
@@ -26,11 +28,13 @@ const Home = () => {
         icon="developer.svg"
         id="intro"
       />
+      {/* Introduce Your Product Quickly / Effectively section*/}
       <MiddleBlock
         title={MiddleBlockContent.title}
         content={MiddleBlockContent.text}
         button={MiddleBlockContent.button}
       />
+      {/* light fast and responsive section */}
       <ContentBlock
         type="left"
         title={AboutContent.title}
@@ -39,6 +43,7 @@ const Home = () => {
         icon="graphs.svg"
         id="about"
       />
+      {/* ready made section */}
       <ContentBlock
         type="right"
         title={MissionContent.title}
@@ -46,7 +51,7 @@ const Home = () => {
         icon="product-launch.svg"
         id="mission"
       />
-
+{/* thats about it section */}
       <ContentBlock
         type="left"
         title={ProductContent.title}
@@ -54,6 +59,7 @@ const Home = () => {
         icon="waving.svg"
         id="product"
       />
+      {/* form section */}
       <ContactFrom
         title={ContactContent.title}
         content={ContactContent.text}

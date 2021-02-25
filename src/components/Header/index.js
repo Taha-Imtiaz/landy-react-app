@@ -61,12 +61,17 @@ const Header = () => {
             <SvgIcon src="logo.svg" />
           </S.LogoContainer>
           <S.NotHidden>
+            {/* show nav on a large screen */}
             <MenuItem />
           </S.NotHidden>
+          
+          {/* hamburger icon */}
           <S.Burger onClick={showDrawer}>
             <S.Outline />
           </S.Burger>
         </Row>
+
+        {/* responsive nav for small screens */}
         <CSSTransition
           in={!isSmallScreen || isNavVisible}
           timeout={350}
