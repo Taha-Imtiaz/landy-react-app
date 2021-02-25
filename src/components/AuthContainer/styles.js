@@ -26,5 +26,12 @@ grid-area: authContainerForm;
 background:red;
 border-radius:0.15rem;
 display:grid;
-grid-template-rows: 15fr 70fr 15fr;
+grid-template-rows: 17.5fr 65fr 17.5fr;
+grid-template-areas:"."
+                    "authForm"
+                    ".";
+`
+export const AuthForm = styled.div `
+grid-area:authForm;
+background:orange;
 `

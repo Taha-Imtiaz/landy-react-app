@@ -2,7 +2,7 @@ import { Row, Col } from "antd";
 import Zoom from "react-reveal/Zoom";
 import useForm from "./useForm";
 import validate from "./validationRules";
-import Button from "../../components/Button"
+import Button from "../../components/Button";
 
 import * as S from "./styles";
 
@@ -30,7 +30,7 @@ const Contact = ({ title, content, id }) => {
       <S.Contact>
         <Row type="flex" justify="space-between" align="middle">
           <Col lg={12} md={11} sm={24}>
-            <Block  title={title} content={content} />
+            <Block title={title} content={content} />
           </Col>
           <Col lg={12} md={12} sm={24}>
             <S.FormGroup autoComplete="off" onSubmit={handleSubmit}>
@@ -79,4 +79,4 @@ const Contact = ({ title, content, id }) => {
   );
 };
 
-export default  (Contact);
+export default Contact;
