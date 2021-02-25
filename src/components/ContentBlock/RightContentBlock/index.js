@@ -1,9 +1,9 @@
 import { Row, Col } from "antd";
-import { withTranslation } from "react-i18next";
+// import { withTranslation } from "react-i18next";
 import Slide from "react-reveal/Slide";
 
-import SvgIcon from "../../../common/SvgIcon";
-import Button from "../../../common/Button";
+import Button from "../../Button";
+import SvgIcon from "../../SvgIcon";
 
 import * as S from "./styles";
 
@@ -20,8 +20,8 @@ const RightBlock = ({ title, content, button, icon, t, id }) => {
         <Col lg={11} md={11} sm={11} xs={24}>
           <Slide left>
             <S.ContentWrapper>
-              <h6>{t(title)}</h6>
-              <S.Content>{t(content)}</S.Content>
+              <h6>{title}</h6>
+              <S.Content>{content}</S.Content>
               <S.ButtonWrapper>
                 {button &&
                   typeof button === "object" &&
@@ -33,7 +33,7 @@ const RightBlock = ({ title, content, button, icon, t, id }) => {
                         width="true"
                         onClick={() => scrollTo("about")}
                       >
-                        {t(item.title)}
+                        {item.title}
                       </Button>
                     );
                   })}
@@ -56,4 +56,4 @@ const RightBlock = ({ title, content, button, icon, t, id }) => {
   );
 };
 
-export default withTranslation()(RightBlock);
+export default  (RightBlock);

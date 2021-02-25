@@ -1,19 +1,17 @@
-import { lazy } from "react";
 import { Row, Col } from "antd";
 import Zoom from "react-reveal/Zoom";
-import { withTranslation } from "react-i18next";
-
 import useForm from "./useForm";
 import validate from "./validationRules";
+import Button from "../../components/Button"
 
 import * as S from "./styles";
 
-const Block = lazy(() => import("../Block"));
-const Input = lazy(() => import("../../common/Input"));
-const Button = lazy(() => import("../../common/Button"));
-const TextArea = lazy(() => import("../../common/TextArea"));
+import Block from "../Block";
 
-const Contact = ({ title, content, id, t }) => {
+import Input from "../Input";
+import TextArea from "../TextArea";
+
+const Contact = ({ title, content, id }) => {
   const { values, errors, handleChange, handleSubmit } = useForm(validate);
 
   const ValidationType = ({ type }) => {
@@ -32,7 +30,7 @@ const Contact = ({ title, content, id, t }) => {
       <S.Contact>
         <Row type="flex" justify="space-between" align="middle">
           <Col lg={12} md={11} sm={24}>
-            <Block padding={true} title={title} content={content} />
+            <Block  title={title} content={content} />
           </Col>
           <Col lg={12} md={12} sm={24}>
             <S.FormGroup autoComplete="off" onSubmit={handleSubmit}>
@@ -70,7 +68,7 @@ const Contact = ({ title, content, id, t }) => {
               </Col>
               <S.ButtonContainer>
                 <Button name="submit" type="submit">
-                  {t("Submit")}
+                  {"Submit"}
                 </Button>
               </S.ButtonContainer>
             </S.FormGroup>
@@ -81,4 +79,4 @@ const Contact = ({ title, content, id, t }) => {
   );
 };
 
-export default withTranslation()(Contact);
+export default  (Contact);

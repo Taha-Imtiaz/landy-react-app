@@ -1,17 +1,18 @@
-import { lazy, Fragment } from "react";
+import {  Fragment } from "react";
 import { Row, Col } from "antd";
-import i18n from "i18next";
-import { withTranslation } from "react-i18next";
+// import i18n from "i18next";
+// import { withTranslation } from "react-i18next";
 import Fade from "react-reveal/Fade";
 
 import * as S from "./styles";
+import SvgIcon from "../SvgIcon";
+import Container from "../Container";
 
-const SvgIcon = lazy(() => import("../../common/SvgIcon"));
-const Container = lazy(() => import("../../common/Container"));
+
 
 const Footer = ({ t }) => {
   const handleChange = (event) => {
-    i18n.changeLanguage(event.target.value);
+    // i18n.changeLanguage(event.target.value);
   };
 
   const SocialLink = ({ href, src }) => {
@@ -35,65 +36,65 @@ const Footer = ({ t }) => {
           <Container>
             <Row type="flex" justify="space-between">
               <Col lg={10} md={10} sm={12} xs={24}>
-                <S.Language>{t("Contact")}</S.Language>
-                <S.Large to="/">{t("Tell us everything")}</S.Large>
+                <S.Language>{"Contact"}</S.Language>
+                <S.Large to="/">{"Tell us everything"}</S.Large>
                 <S.Para>
-                  {t(
+                  {
                     `Do you have any question regarding the project? Feel free to reach out.`
-                  )}
+                  }
                 </S.Para>
                 <a href="mailto:l.qqbadze@gmail.com">
-                  <S.Chat>{t(`Let's Chat`)}</S.Chat>
+                  <S.Chat>{`Let's Chat`}</S.Chat>
                 </a>
               </Col>
               <Col lg={8} md={8} sm={12} xs={24}>
-                <S.Title>{t("Policy")}</S.Title>
+                <S.Title>{"Policy"}</S.Title>
                 <S.Large to="/" left="true">
-                  {t("Application Security")}
+                  {"Application Security"}
                 </S.Large>
                 <S.Large left="true" to="/">
-                  {t("Software Principles")}
+                  {"Software Principles"}
                 </S.Large>
               </Col>
               <Col lg={6} md={6} sm={12} xs={24}>
                 <S.Empty />
                 <S.Large left="true" to="/">
-                  {t("Support Center")}
+                  {"Support Center"}
                 </S.Large>
                 <S.Large left="true" to="/">
-                  {t("Customer Support")}
+                  {"Customer Support"}
                 </S.Large>
               </Col>
             </Row>
             <Row type="flex" justify="space-between">
               <Col lg={10} md={10} sm={12} xs={24}>
                 <S.Empty />
-                <S.Language>{t("ADDRESS")}</S.Language>
+                <S.Language>{"ADDRESS"}</S.Language>
                 <S.Para>Rancho Santa Margarita</S.Para>
                 <S.Para>2131 Elk Street</S.Para>
                 <S.Para>California</S.Para>
               </Col>
               <Col lg={8} md={8} sm={12} xs={24}>
-                <S.Title>{t("Company")}</S.Title>
+                <S.Title>{"Company"}</S.Title>
                 <S.Large left="true" to="/">
-                  {t("About")}
+                  {"About"}
                 </S.Large>
                 <S.Large left="true" to="/">
-                  {t("Blog")}
+                  {"Blog"}
                 </S.Large>
                 <S.Large left="true" to="/">
-                  {t("Press")}
+                  {"Press"}
                 </S.Large>
                 <S.Large left="true" to="/">
-                  {t("Careers & Culture")}
+                  {"Careers & Culture"}
                 </S.Large>
               </Col>
               <Col lg={6} md={6} sm={12} xs={24}>
                 <S.Select>
-                  <S.Label htmlFor="select-lang">{t("Language")}</S.Label>
+                  <S.Label htmlFor="select-lang">{"Language"}</S.Label>
                   <S.LangSelect
                     onChange={handleChange}
-                    value={i18n.language}
+                    // value={i18n.language}
                     id="select-lang"
                   >
                     <option value="en">English</option>
@@ -152,4 +153,4 @@ const Footer = ({ t }) => {
   );
 };
 
-export default withTranslation()(Footer);
+export default  (Footer);

@@ -1,14 +1,15 @@
-import { useState, Fragment, lazy } from "react";
+import { useState, Fragment } from "react";
 import { Row, Col, Drawer } from "antd";
 import { CSSTransition } from "react-transition-group";
-import { withTranslation } from "react-i18next";
+// import { withTranslation } from "react-i18next";
 
 import * as S from "./styles";
+import Button from "../Button";
+import SvgIcon from "../SvgIcon";
 
-const SvgIcon = lazy(() => import("../../common/SvgIcon"));
-const Button = lazy(() => import("../../common/Button"));
 
-const Header = ({ t }) => {
+
+const Header = () => {
   const [isNavVisible] = useState(false);
   const [isSmallScreen] = useState(false);
   const [visible, setVisibility] = useState(false);
@@ -32,20 +33,20 @@ const Header = ({ t }) => {
     return (
       <Fragment>
         <S.CustomNavLinkSmall onClick={() => scrollTo("about")}>
-          <S.Span>{t("About")}</S.Span>
+          <S.Span>{"About"}</S.Span>
         </S.CustomNavLinkSmall>
         <S.CustomNavLinkSmall onClick={() => scrollTo("mission")}>
-          <S.Span>{t("Mission")}</S.Span>
+          <S.Span>{"Mission"}</S.Span>
         </S.CustomNavLinkSmall>
         <S.CustomNavLinkSmall onClick={() => scrollTo("product")}>
-          <S.Span>{t("Product")}</S.Span>
+          <S.Span>{"Product"}</S.Span>
         </S.CustomNavLinkSmall>
         <S.CustomNavLinkSmall
           style={{ width: "180px" }}
           onClick={() => scrollTo("contact")}
         >
           <S.Span>
-            <Button>{t("Contact")}</Button>
+            <Button>{"Contact"}</Button>
           </S.Span>
         </S.CustomNavLinkSmall>
       </Fragment>
@@ -91,4 +92,4 @@ const Header = ({ t }) => {
   );
 };
 
-export default withTranslation()(Header);
+export default  (Header);

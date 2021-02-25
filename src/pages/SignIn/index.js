@@ -5,18 +5,18 @@ import AboutContent from "../../content/AboutContent.json";
 import MissionContent from "../../content/MissionContent.json";
 import ProductContent from "../../content/ProductContent.json";
 import ContactContent from "../../content/ContactContent.json";
+
+import ContactFrom from "../../components/ContactForm";
+import ContentBlock from "../../components/ContentBlock";
+import MiddleBlock from "../../components/MiddleBlock";
+
+import ScrollToTop from "../../components/ScrollToTop";
 import Container from "../../components/Container";
 
-import ContactFrom from "../../components/ContactForm"
-import ContentBlock from "../../components/ContentBlock"
-import MiddleBlock from "../../components/MiddleBlock"
-import ScrollToTop from "../../components/ScrollToTop"
-
-
-const Home = () => {
+const SignIn = () => {
   return (
     <Container>
-     <ScrollToTop/>
+      <ScrollToTop />
       <ContentBlock
         type="right"
         first="true"
@@ -63,4 +63,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default SignIn;
