@@ -7,7 +7,7 @@ import ProductContent from "../../content/ProductContent.json";
 import ContactContent from "../../content/ContactContent.json";
 import Container from "../../components/Container";
 
-import ContactFrom from "../../components/ContactForm"
+import ContactForm from "../../components/ContactForm"
 import ContentBlock from "../../components/ContentBlock"
 import MiddleBlock from "../../components/MiddleBlock"
 import ScrollToTop from "../../components/ScrollToTop"
@@ -60,7 +60,7 @@ const Home = () => {
         id="product"
       />
       {/* form section */}
-      <ContactFrom
+      <ContactForm
         title={ContactContent.title}
         content={ContactContent.text}
         id="contact"

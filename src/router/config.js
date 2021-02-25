@@ -5,9 +5,14 @@ const routes = [
     component: "Home",
   },
   {
-    path: ["/sign-in"],
+    path: ["/signin"],
     exact: true,
     component: "SignIn",
+  },
+  {
+    path: ["/signup"],
+    exact: true,
+    component: "SignUp",
   },
 ];
 
