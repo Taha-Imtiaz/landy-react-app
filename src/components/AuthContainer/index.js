@@ -1,15 +1,18 @@
 import React from "react";
-import AuthForms from "../AuthForms";
+import { withRouter } from "react-router-dom";
+import LogInForm from "../LogInForm";
+import SignUpForm from "../SignUpForm";
 import * as S from "./styles";
 
-const AuthContainer = () => {
+const AuthContainer = ({location:{pathname}}) => {
+  console.log(pathname)
   return (
     <S.AuthContainer>
       <S.AuthContainerPageArea>
         <S.AuthContainerImage></S.AuthContainerImage>
         <S.AuthContainerForm>
           <S.AuthForm>
-            <AuthForms/>
+        {pathname === `/signin`? <LogInForm/> : <SignUpForm/>}
             </S.AuthForm>
         </S.AuthContainerForm>
       </S.AuthContainerPageArea>
@@ -17,4 +20,4 @@ const AuthContainer = () => {
   );
 };
 
-export default AuthContainer;
+export default withRouter(AuthContainer);

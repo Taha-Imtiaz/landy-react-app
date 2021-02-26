@@ -1,10 +1,9 @@
 import React from 'react'
+import AuthContainer from '../../components/AuthContainer'
 
 const SignUp = () => {
     return (
-        <div>
-            Sign Up Page
-        </div>
+        <AuthContainer />
     )
 }
 

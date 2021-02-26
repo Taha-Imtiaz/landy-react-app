@@ -46,11 +46,17 @@ const Styles = createGlobalStyle`
     h1 {
         font-weight: 600;
     }
+    span {
+        color: #343D48;
+        font-size: 1.125rem;
+    }
 
     a {
         text-decoration: none;
         outline: none;
         color: #2E186A;
+        font-size: 1.125rem;
+
 
         :hover {
             color: #2e186a;

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const AuthContainer = styled.div`
 display: grid;
-grid-template-rows: minmax(80vh, min-content);
+grid-template-rows: minmax(85vh, min-content);
 grid-template-columns: 7.5fr 85fr 7.5fr;
 grid-template-areas: ". authContainerPageArea .";
 
@@ -23,15 +23,13 @@ border-radius:0.15rem;
 `
 export const AuthContainerForm = styled.div`
 grid-area: authContainerForm;
-background:red;
 border-radius:0.15rem;
 display:grid;
-grid-template-rows: 17.5fr 65fr 17.5fr;
+grid-template-rows: 16fr 68fr 16fr;
 grid-template-areas:"."
                     "authForm"
                     ".";
 `
 export const AuthForm = styled.div `
 grid-area:authForm;
-background:orange;
 `

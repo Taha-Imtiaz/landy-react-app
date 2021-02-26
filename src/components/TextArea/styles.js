@@ -10,6 +10,9 @@ export const Container = styled.div`
 export const TextArea = styled.textarea`
   width: 100%;
   outline: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
   border-radius: 8px;
   padding: 1rem 1.25rem;
   resize: none;

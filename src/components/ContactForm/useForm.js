@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { notification } from "antd";
-import axios from "axios";
 
 const useForm = (validate) => {
+  console.log(validate)
   const [values, setValues] = useState({});
   const [errors, setErrors] = useState({});
   const [shouldSubmit, setShouldSubmit] = useState(false);
@@ -18,15 +18,15 @@ const useForm = (validate) => {
     event.preventDefault();
     setErrors(validate(values));
     // Your url for API
-    const url = "";
+    // const url = "";
     if (Object.keys(values).length === 3) {
-      axios
-        .post(url, {
-          ...values,
-        })
-        .then(() => {
+      // axios
+      //   .post(url, {
+      //     ...values,
+      //   })
+      //   .then(() => {
           setShouldSubmit(true);
-        });
+        // });
     }
   };
 

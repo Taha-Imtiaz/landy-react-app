@@ -14,6 +14,11 @@ const routes = [
     exact: true,
     component: "SignUp",
   },
+  {
+    path: ["/addproject"],
+    exact: true,
+    component: "AddProject",
+  },
 ];
 
 export default routes;
