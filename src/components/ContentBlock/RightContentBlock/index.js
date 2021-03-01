@@ -3,6 +3,7 @@ import { Row, Col } from "antd";
 import Slide from "react-reveal/Slide";
 
 import Button from "../../Button";
+import Heading from "../../Heading";
 import SvgIcon from "../../SvgIcon";
 
 import * as S from "./styles";
@@ -21,7 +22,9 @@ const RightBlock = ({ title, content, button, icon, t, id }) => {
         <Col lg={11} md={11} sm={11} xs={24}>
           <Slide left>
             <S.ContentWrapper>
-              <h6>{title}</h6>
+              <Heading fontSize={16} fontWeight="bold" color="#0a1f44">
+                {title}
+              </Heading>
               <S.Content>{content}</S.Content>
               <S.ButtonWrapper>
                 {button &&
@@ -57,4 +60,4 @@ const RightBlock = ({ title, content, button, icon, t, id }) => {
   );
 };
 
-export default  (RightBlock);
+export default RightBlock;

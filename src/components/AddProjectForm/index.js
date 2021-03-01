@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Heading from "../Heading";
 import Input from "../Input";
 import * as S from "./styles";
 
@@ -23,7 +24,7 @@ const AddProjectForm = () => {
         <S.AddProjectFormArea>
           <S.AddProjectFormContent>
             <S.AddProjectFormHeader>
-              <h2>Add Project Form</h2>
+              <Heading fontSize = {26} fontWeight = "bold" color = "#0a1f44" >Add Project Form</Heading>
             </S.AddProjectFormHeader>
 
             <S.AddProjectFormFields>

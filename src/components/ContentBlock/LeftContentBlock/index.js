@@ -1,8 +1,8 @@
 import { Row, Col } from "antd";
 // import { withTranslation } from "react-i18next";
 import Slide from "react-reveal/Slide";
+import Heading from "../../Heading";
 import SvgIcon from "../../SvgIcon";
-
 
 import * as S from "./styles";
 
@@ -24,14 +24,16 @@ const LeftContentBlock = ({ icon, title, content, section, id }) => {
         <Col lg={11} md={11} sm={11} xs={24}>
           <Slide right>
             <S.ContentWrapper>
-              <h6>{title}</h6>
+              <Heading fontSize={16} fontWeight="bold" color="#0a1f44">
+                {title}
+              </Heading>
               <S.Content>{content}</S.Content>
               <S.ServiceWrapper>
                 <Row type="flex" justify="space-between">
                   {section &&
                     typeof section === "object" &&
                     section.map((item, id) => {
-                      console.log(item)
+                      console.log(item);
                       return (
                         <Col key={id} span={11}>
                           <SvgIcon src={item.icon} width="60px" height="60px" />
@@ -50,4 +52,4 @@ const LeftContentBlock = ({ icon, title, content, section, id }) => {
   );
 };
 
-export default  (LeftContentBlock);
+export default LeftContentBlock;
