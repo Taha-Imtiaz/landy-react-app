@@ -7,8 +7,6 @@ import * as S from "./styles";
 import Button from "../Button";
 import SvgIcon from "../SvgIcon";
 
-
-
 const Header = () => {
   const [isNavVisible] = useState(false);
   const [isSmallScreen] = useState(false);
@@ -64,7 +62,7 @@ const Header = () => {
             {/* show nav on a large screen */}
             <MenuItem />
           </S.NotHidden>
-          
+
           {/* hamburger icon */}
           <S.Burger onClick={showDrawer}>
             <S.Outline />
@@ -97,4 +95,4 @@ const Header = () => {
   );
 };
 
-export default  (Header);
+export default Header;

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 const Styles = createGlobalStyle`
 
@@ -7,8 +7,11 @@ const Styles = createGlobalStyle`
     a {
         font-family: 'Ubuntu', sans-serif;
     }
-
-
+html {
+    @media only screen and (max-width:1000px) {
+        font-size:0.9rem;
+    }
+}
     body {
         margin:0;
         padding:0;

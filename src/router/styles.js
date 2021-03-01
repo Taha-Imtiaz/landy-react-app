@@ -2,13 +2,12 @@ import styled from "styled-components";
 
 export const AppStyle = styled.div`
 display:grid;
-grid-template-rows: minmax(15vh, min-content) minmax(85vh, min-content);
+grid-template-rows: 15vh minmax(85vh, min-content);
 grid-template-areas: "header"
                     "appcontent";
 `
 export const Header = styled.div`
 grid-area: header;
-
 `
 export const AppContent = styled.div`
 grid-area:appcontent;
@@ -26,7 +25,7 @@ grid-area: footer;
 `
 export const AppStyleWithoutFooter = styled.div`
 display:grid;
-grid-template-rows: minmax(15vh, min-content) minmax(85vh, min-content);
+grid-template-rows: 15vh minmax(85vh, min-content);
 grid-template-areas: "header"
                     "appcontentwithoutfooter";
 `
