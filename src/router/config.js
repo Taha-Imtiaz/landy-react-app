@@ -19,6 +19,11 @@ const routes = [
     exact: true,
     component: "AddProject",
   },
+  {
+    path: ["/userprofile"],
+    exact: true,
+    component: "Profile",
+  },
 ];
 
 export default routes;
