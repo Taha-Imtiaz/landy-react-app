@@ -1,7 +1,17 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-export const ProjectListItemContentContainer = styled.div`
+
+export const ProjectListItemLinkWrapper = styled(Link)`
 display:grid;
 grid-template-rows: minmax(52.5vh, min-content);
+grid-template-columns: 1fr;
+// background:lightgreen;
+
+`
+
+export const ProjectListItemContentContainer = styled.div`
+display:grid;
+grid-template-rows: 1fr;
 grid-template-columns: 1fr;
 grid-template-areas: "projectlistitemcontent";
 
@@ -50,6 +60,7 @@ display:grid;
 grid-template-columns:repeat(2,1fr);
 // column-gap: 0.5rem;
 padding-left:   0.6rem;
+font-size: 80%;
 
 align-items: center;
 `
@@ -59,14 +70,15 @@ display:grid;
 grid-template-columns:repeat(3,1fr);
 grid-template-rows:repeat(2, 3.75vh);
 justify-items:center;
+
 `
 export const ProjectCardContentHeader =styled.p`
-font-size: 0.9rem !important;
+font-size: 62.5%;
 display:grid;
 align-items:center;
 `
 export const ProjectCardContent =styled.p`
-font-size: 0.9rem !important;
+font-size: 62.5% !important;
 display:grid;
 align-items:center;
 `
