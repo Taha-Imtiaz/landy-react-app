@@ -11,7 +11,6 @@ import { useHistory } from "react-router-dom";
 
 const SignUpForm = () => {
   const history = useHistory();
- 
 
   const [values, setValues] = useState({
     name: "",
@@ -36,7 +35,7 @@ const SignUpForm = () => {
     let { name, email, password } = values;
     if (validate()) {
       axios
-        .post( {
+        .post('', {
           ...values,
         })
         .then((res) => {

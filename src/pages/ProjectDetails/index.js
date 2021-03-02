@@ -13,13 +13,18 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 const ProjectDetail = (props) => {
     const projectUrl = window.location.href
     const history = useHistory();
-    
+
     const [data, setData] = useState(null)
     const [payment, setPayment] = useState({});
     const [show, setShow] = useState(false);
+    const [showOwner, setShowOnwer] = useState(false);
+    const [email, setEmail] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    const handleCloseOwner = () => setShowOnwer(false);
+    const handleShowOwner = () => setShowOnwer(true);
     let {
         match: {
             params: { id },
@@ -27,7 +32,7 @@ const ProjectDetail = (props) => {
     } = props;
     useEffect(() => {
         axios
-            .get( '/project/' + id)
+            .get('/project/' + id)
             .then((res) => {
                 if (res.data.status === 200) {
                     setData(res.data.data)
@@ -57,7 +62,7 @@ const ProjectDetail = (props) => {
     //     e.preventDefault();
     //     if (validate()) {
     //         axios
-    //             .post(url + '/login', {
+    //             .post('/login', {
     //                 ...values,
     //             })
     //             .then((res) => {
@@ -125,12 +130,35 @@ const ProjectDetail = (props) => {
         }
     }
 
-    const copyLink = () => {
+    const changeHandlerOnwer = (e) => {
+        setEmail(e.target.value)
+    }
 
+    const addOwner = () => {
+        console.log(email)
+        if (email) {
+            let obj = {
+                id: data._id,
+                email
+            }
+            axios
+                .post('/add-owner', {
+                    ...obj,
+                })
+                .then((res) => {
+                    if (res.data.status === 200) {
+                        // localStorage.setItem('saving-token', res.data.token)
+                        // history.push("/profile")
+                        handleCloseOwner();
+                        setData(res.data.data)
+                    }
+                    toast(res.data.message);
+                }).catch((e) => {
+                });
+        }
     }
 
     return (
-
         <Fragment>{data ?
             <div>
                 <h4>Project Detail</h4>
@@ -143,6 +171,9 @@ const ProjectDetail = (props) => {
                 <img src={data.image} />
                 <Button type="button" onClick={handleShow}>
                     Contribute
+              </Button>
+              <Button type="button" onClick={handleShowOwner}>
+                    Add Owner
               </Button>
             </div>
             : null}
@@ -219,10 +250,39 @@ const ProjectDetail = (props) => {
                         Submit
           </Button>
                 </Modal.Footer>
-            </Modal> */}
-            </Fragment>
-   
-   );
+            </Modal>
+
+            {/* Add onwer modal */}
+            <Modal show={showOwner} onHide={handleCloseOwner}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Contribute</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <form>
+                        <Input
+                            type="email"
+                            variant="outlined"
+                            size="small"
+                            id="Email"
+                            label="Enter Email"
+                            name="email"
+                            onChange={changeHandlerOnwer}
+                        />
+                    </form>
+                </Modal.Body>
+                <Modal.Footer>
+                    {/* <Button variant="secondary" onClick={handleClose}>
+                        Close
+          </Button> */}
+                    <Button variant="primary" onClick={addOwner}>
+                        Submit
+          </Button>
+                </Modal.Footer>
+            </Modal>
+
+        </Fragment>
+
+    );
 };
 
 export default ProjectDetail;

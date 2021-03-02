@@ -98,7 +98,6 @@ const Footer = () => {
                     id="select-lang"
                   >
                     <option value="en">English</option>
-                    <option value="es">Español</option>
                   </S.LangSelect>
                 </S.Select>
               </Col>
