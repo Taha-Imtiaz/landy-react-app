@@ -220,7 +220,8 @@ const ProjectDetail = (props) => {
                         Submit
           </Button>
                 </Modal.Footer>
-            </Modal></Fragment>
+            </Modal> */}
+            </Fragment>
     );
 };
 

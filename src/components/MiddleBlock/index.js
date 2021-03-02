@@ -1,6 +1,7 @@
 import { Row, Col } from "antd";
 // import { withTranslation } from "react-i18next";
 import Fade from "react-reveal/Fade";
+import {Link } from 'react-router-dom'
 
 import * as S from "./styles";
 import Button from "../Button";
@@ -26,13 +27,14 @@ const MiddleBlock = ({ title, content, button }) => {
               </Heading>
               <S.Content>{content}</S.Content>
               {button ? (
+                <Link to="/signup">
                 <Button
                   name="submit"
                   type="submit"
-                  onClick={() => scrollTo("mission")}
                 >
                   {button}
                 </Button>
+                </Link>
               ) : (
                 ""
               )}
