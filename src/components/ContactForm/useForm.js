@@ -17,16 +17,11 @@ const useForm = (validate) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     setErrors(validate(values));
-    // Your url for API
-    // const url = "";
+    
     if (Object.keys(values).length === 3) {
-      // axios
-      //   .post(url, {
-      //     ...values,
-      //   })
-      //   .then(() => {
+     
           setShouldSubmit(true);
-        // });
+      
     }
   };
 

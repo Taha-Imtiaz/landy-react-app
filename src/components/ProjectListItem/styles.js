@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const ProjectListItemContent =styled.div`
 display: grid;
-grid-template-rows: minmax(7vh,min-content) 1fr minmax(7vh,min-content);
+grid-template-rows: 30vh repeat(3, minmax(7vh ,min-content));
 border: 2px solid #ccc;
   box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
   border-radius:0.25rem;
@@ -11,8 +11,17 @@ border: 2px solid #ccc;
   
 `
 export const ProjectListItemImage = styled.div`
-width:100%;
-background-image: linear-gradient(rgba(0, 0 , 0, 0.9), rgba(0, 0 , 0, 0.9));
+
+display:grid;
+grid-template-rows: 30vh;
+
+
+`
+
+export const ProjectPic = styled.img`
+width: 100%;
+height:100%;
+
 `
 export const ProjectListItemDescriptionContent = styled.span`
 font-size: 1.5rem !important;
@@ -20,6 +29,12 @@ padding: 1rem;
 border-bottom: 2px solid rgba(0,0,0,0.1);
 font-family: sans-serif;
 color: #0a1f44;
+`
+export const ProjectStatusInfo = styled.div`
+display:grid;
+grid-template-columns:repeat(2,1fr);
+column-gap: 0.5rem;
+align-items: center;
 `
 
 export const ProjectCardIcons = styled.div`

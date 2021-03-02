@@ -8,8 +8,7 @@ import { Modal } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 const ProjectDetail = (props) => {
     const history = useHistory();
-    // const url = 'https://savings-back.herokuapp.com/api/'
-    const url = 'http://localhost:3001/api'
+    
     const [data, setData] = useState(null)
     const [payment, setPayment] = useState({});
     const [show, setShow] = useState(false);
@@ -23,7 +22,7 @@ const ProjectDetail = (props) => {
     } = props;
     useEffect(() => {
         axios
-            .get(url + '/project/' + id)
+            .get( '/project/' + id)
             .then((res) => {
                 if (res.data.status === 200) {
                     setData(res.data.data)
@@ -82,7 +81,7 @@ const ProjectDetail = (props) => {
             </div>
             : null}
 
-            <Modal show={show} onHide={handleClose}>
+            {/* <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Modal heading</Modal.Title>
                 </Modal.Header>
@@ -164,8 +163,10 @@ const ProjectDetail = (props) => {
                         Save Changes
           </Button>
                 </Modal.Footer>
-            </Modal></Fragment>
-    );
+            </Modal> */}
+            </Fragment>
+   
+   );
 };
 
 export default ProjectDetail;

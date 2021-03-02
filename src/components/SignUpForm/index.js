@@ -11,8 +11,7 @@ import { useHistory } from "react-router-dom";
 
 const SignUpForm = () => {
   const history = useHistory();
-  // const url = 'https://savings-back.herokuapp.com/api/'
-  const url = 'http://localhost:3001/api'
+ 
 
   const [values, setValues] = useState({
     name: "",
@@ -37,7 +36,7 @@ const SignUpForm = () => {
     let { name, email, password } = values;
     if (validate()) {
       axios
-        .post(url, {
+        .post( {
           ...values,
         })
         .then((res) => {
