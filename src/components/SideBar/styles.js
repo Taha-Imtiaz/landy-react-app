@@ -38,7 +38,7 @@ grid-template-rows: repeat(auto-fit,minmax(min-content, 7vh));
 `
 export const UserDescriptionRow = styled.div`
 display:grid;
-grid-template-columns: 30fr 100fr;
+grid-template-columns: 30fr 70fr;
 font-family:sans-serif;
 padding-left: 1rem;
 align-items:center;
@@ -47,4 +47,13 @@ align-items:center;
 export const RowItem = styled.p`
 color: #fff;
 font-family: sans-serif;
+font-size: 0.9rem;
+@media only screen and (max-width: 1150px) {
+font-size: 0.75rem;
+
+}
+@media only screen and (max-width: 1000px) {
+    font-size: 1.125rem;
+    
+    }
 `

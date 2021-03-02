@@ -9,7 +9,9 @@ const ProjectListItem = (props) => {
     let data = props.data;
     return (
         <Link to={`/project-detail/${data._id}`}>
+            <S.ProjectListItemContentContainer>
             <S.ProjectListItemContent>
+                <S.ProjectListItemUpperContent>
                 <S.ProjectListItemImage>
                     <S.ProjectPic src={data.image}>
 
@@ -28,12 +30,35 @@ const ProjectListItem = (props) => {
                     <Paragraph fontSize = {10}>{new Date(data.targetDate).toDateString()}</Paragraph> 
                 </S.ProjectStatusInfo>
 
-                <S.ProjectCardIcons>
-                    <S.ProjectCardIconsContent>Target Amount: {data.targetAmount}</S.ProjectCardIconsContent>
-                    <S.ProjectCardIconsContent>Monthly Saving Amount: {data.monthlySavingAmount}</S.ProjectCardIconsContent>
-                    <S.ProjectCardIconsContent>Actual Amount: {data.actualAmount}</S.ProjectCardIconsContent>
-                </S.ProjectCardIcons>
+                </S.ProjectListItemUpperContent>
+               
+
+                <S.ProjectCardFooter>
+                    <S.ProjectCardContentHeader>
+                        Target Amt
+                        
+                    
+                    </S.ProjectCardContentHeader>
+                    <S.ProjectCardContentHeader>Monthly Amt 
+                      
+                        </S.ProjectCardContentHeader>
+                    <S.ProjectCardContentHeader>Actual Amt
+                         </S.ProjectCardContentHeader>
+                         <S.ProjectCardContent>
+
+                             {data.targetAmount}
+                         </S.ProjectCardContent>
+                         <S.ProjectCardContent>
+                               {data.monthlySavingAmount}
+                         </S.ProjectCardContent>
+                         <S.ProjectCardContent>
+                         {data.actualAmount}
+
+                         </S.ProjectCardContent>
+                        
+                </S.ProjectCardFooter>
             </S.ProjectListItemContent>
+            </S.ProjectListItemContentContainer>
         </Link>
     )
 }

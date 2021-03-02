@@ -46,7 +46,6 @@ export const AuthContainerForm = styled.div`
     "."
     "authForm"
     ".";
-    background:lightpink;
 `;
 export const AuthForm = styled.div`
   grid-area: authForm;

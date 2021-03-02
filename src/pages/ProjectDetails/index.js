@@ -107,7 +107,7 @@ const ProjectDetail = (props) => {
                             projectId: data._id
                         };
                         axios
-                            .post(url + '/contribute', {
+                            .post('/contribute', {
                                 ...obj,
                             })
                             .then((res) => {

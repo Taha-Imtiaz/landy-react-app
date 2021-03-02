@@ -13,11 +13,15 @@ const SideBar = (props) => {
 
                 </S.UserImage>
                 <S.UserInfoDescription>
-                    <S.UserDescriptionRow><S.RowItem>Name :</S.RowItem>
-                        <S.RowItem>{data.name}</S.RowItem></S.UserDescriptionRow>
+                    <S.UserDescriptionRow>
+                        <S.RowItem>Name :</S.RowItem>
+                        <S.RowItem>{data.name}</S.RowItem>
+                        </S.UserDescriptionRow>
 
-                    <S.UserDescriptionRow> <S.RowItem>Email : </S.RowItem>
-                        <S.RowItem> {data.email}</S.RowItem></S.UserDescriptionRow>
+                    <S.UserDescriptionRow> 
+                        <S.RowItem>Email : </S.RowItem>
+                        <S.RowItem> {data.email}</S.RowItem>
+                        </S.UserDescriptionRow>
 
                     <S.UserDescriptionRow>
                         <S.RowItem>Joined : </S.RowItem>

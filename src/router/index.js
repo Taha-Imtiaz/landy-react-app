@@ -17,7 +17,7 @@ const Router = () => {
     <Suspense fallback={null}>
 
       <GlobalStyles />
-      {pathname !== '/signin' && pathname !== '/signup' ?
+      {pathname !== '/signin' && pathname !== '/signup' && pathname !== '/profile' ? 
         <S.AppStyle>
           <S.Header>
             <Header />

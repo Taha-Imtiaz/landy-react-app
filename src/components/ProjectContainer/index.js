@@ -5,6 +5,7 @@ import * as S from './styles'
 import {
     Link
 } from "react-router-dom";
+import Button from '../Button';
 const ProjectContainer = (props) => {
     let data = props.data;
     console.log(data)
@@ -12,7 +13,9 @@ const ProjectContainer = (props) => {
         <S.ProjectContainerArea>
             <S.ProjectContainerUpperContent>
                 <h3>Projects</h3>
-                <Link to="/add-project">New Project</Link>
+                <Link to="/add-project">
+               <Button> New Project</Button>
+               </Link>
             </S.ProjectContainerUpperContent>
             <S.ProjectListContent>
                 <ProjectList data={data} />
