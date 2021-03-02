@@ -4,8 +4,7 @@ import Fade from "react-reveal/Fade";
 
 import * as S from "./styles";
 import Button from "../Button";
-
-
+import Heading from "../Heading";
 
 const MiddleBlock = ({ title, content, button }) => {
   const scrollTo = (id) => {
@@ -22,7 +21,9 @@ const MiddleBlock = ({ title, content, button }) => {
         <Fade bottom>
           <S.ContentWrapper>
             <Col lg={24} md={24} sm={24} xs={24}>
-              <h6>{title}</h6>
+              <Heading fontSize={16} fontWeight="bold" color="#0a1f44">
+                {title}
+              </Heading>
               <S.Content>{content}</S.Content>
               {button ? (
                 <Button
@@ -43,4 +44,4 @@ const MiddleBlock = ({ title, content, button }) => {
   );
 };
 
-export default  (MiddleBlock);
+export default MiddleBlock;

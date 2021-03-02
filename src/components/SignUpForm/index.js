@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../Button";
+import Heading from "../Heading";
 import Input from "../Input";
 import * as S from "./styles";
 import { ToastContainer, toast } from 'react-toastify';
@@ -59,7 +60,7 @@ const SignUpForm = () => {
       <form onSubmit={handleSubmit}>
         <S.AuthFormArea>
           <S.SignUpHeader>
-            <h3>Create Account</h3>
+            <Heading fontSize = {22} fontWeight = "bold" color = "#0a1f44" >Create Account</Heading>
           </S.SignUpHeader>
           <S.SignUpFormFields>
             <S.NameField>
