@@ -34,7 +34,7 @@ const Footer = () => {
       <Fade bottom>
         <S.Footer>
           <Container>
-            <Row type="flex" justify="space-between">
+            {/* <Row type="flex" justify="space-between">
               <Col lg={10} md={10} sm={12} xs={24}>
                 <S.Language>{"Contact"}</S.Language>
                 <S.Large to="/">{"Tell us everything"}</S.Large>
@@ -65,14 +65,14 @@ const Footer = () => {
                   {"Customer Support"}
                 </S.Large>
               </Col>
-            </Row>
+            </Row> */}
             <Row type="flex" justify="space-between">
               <Col lg={10} md={10} sm={12} xs={24}>
                 <S.Empty />
                 <S.Language>{"ADDRESS"}</S.Language>
-                <S.Para>Rancho Santa Margarita</S.Para>
-                <S.Para>2131 Elk Street</S.Para>
-                <S.Para>California</S.Para>
+                <S.Para>Lorem Ipsum Emago</S.Para>
+                <S.Para>2661 XYZ Street</S.Para>
+                <S.Para>City Name</S.Para>
               </Col>
               <Col lg={8} md={8} sm={12} xs={24}>
                 <S.Title>{"Company"}</S.Title>
@@ -116,33 +116,25 @@ const Footer = () => {
               <S.NavLink to="/">
                 <S.LogoContainer>
                   <SvgIcon
-                    src="logo.svg"
+                    src="logo.png"
                     aria-label="homepage"
-                    width="101px"
-                    height="64px"
+                    width="80ox"
+                    height="auto"
                   />
                 </S.LogoContainer>
               </S.NavLink>
               <S.FooterContainer>
                 <SocialLink
-                  href="https://github.com/Adrinlol/create-react-app-adrinlol"
-                  src="github.svg"
-                />
-                <SocialLink
-                  href="https://twitter.com/Adrinlolx"
+                  href="https://twitter.com/"
                   src="twitter.svg"
                 />
                 <SocialLink
-                  href="https://www.linkedin.com/in/lasha-kakabadze/"
+                  href="https://www.linkedin.com/"
                   src="linkedin.svg"
                 />
                 <SocialLink
-                  href="https://github.com/Adrinlol/"
+                  href="https://instagram.com"
                   src="instagram.svg"
-                />
-                <SocialLink
-                  href="https://medium.com/@lashakakabadze/"
-                  src="medium.svg"
                 />
               </S.FooterContainer>
             </Row>
