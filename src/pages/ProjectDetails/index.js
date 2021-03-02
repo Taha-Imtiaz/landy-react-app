@@ -57,7 +57,7 @@ const ProjectDetail = (props) => {
     //     e.preventDefault();
     //     if (validate()) {
     //         axios
-    //             .post(url + '/login', {
+    //             .post('/login', {
     //                 ...values,
     //             })
     //             .then((res) => {
@@ -107,7 +107,7 @@ const ProjectDetail = (props) => {
                             projectId: data._id
                         };
                         axios
-                            .post(url + '/contribute', {
+                            .post('/contribute', {
                                 ...obj,
                             })
                             .then((res) => {

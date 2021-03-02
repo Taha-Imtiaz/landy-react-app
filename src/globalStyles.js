@@ -5,7 +5,7 @@ const Styles = createGlobalStyle`
     body,
     html,
     a {
-        font-family: 'Ubuntu', sans-serif;
+        font-family: 'Montserrat', sans-serif;
     }
 html {
     @media only screen and (max-width:1000px) {
@@ -31,7 +31,7 @@ html {
     h4,
     h5,
     h6 {
-        font-family: 'Ubuntu', sans-serif;
+        font-family: 'Montserrat', sans-serif;
         color: #0a1f44;
         font-size: 2.575rem;
         line-height: 3.0625rem;
