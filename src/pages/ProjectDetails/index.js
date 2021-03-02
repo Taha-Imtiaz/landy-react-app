@@ -13,8 +13,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 const ProjectDetail = (props) => {
     const projectUrl = window.location.href
     const history = useHistory();
-    // const url = 'https://savings-back.herokuapp.com/api/'
-    const url = 'http://localhost:3001/api'
+    
     const [data, setData] = useState(null)
     const [payment, setPayment] = useState({});
     const [show, setShow] = useState(false);
@@ -28,7 +27,7 @@ const ProjectDetail = (props) => {
     } = props;
     useEffect(() => {
         axios
-            .get(url + '/project/' + id)
+            .get( '/project/' + id)
             .then((res) => {
                 if (res.data.status === 200) {
                     setData(res.data.data)
@@ -222,7 +221,8 @@ const ProjectDetail = (props) => {
                 </Modal.Footer>
             </Modal> */}
             </Fragment>
-    );
+   
+   );
 };
 
 export default ProjectDetail;

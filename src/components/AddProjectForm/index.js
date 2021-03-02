@@ -5,13 +5,12 @@ import * as S from "./styles";
 import Button from "../Button";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import axios from 'axios';
 import { useHistory } from "react-router-dom";
+import axios from 'axios';
 
 const AddProjectForm = () => {
   const history = useHistory();
-  // const url = 'https://savings-back.herokuapp.com/api/'
-  const url = 'http://localhost:3001/api'
+   
   let token;
   useEffect(() => {
     token = localStorage.getItem('saving-token')
@@ -46,11 +45,14 @@ const AddProjectForm = () => {
     if (validate()) {
       let formData = new FormData();
       formData.append('data', JSON.stringify(values));
+    token = localStorage.getItem('saving-token')
+
       const config = {
         headers: { "Authorization": token }
       }
+
       axios
-        .post(url + '/add-project', formData, config)
+        .post('/add-project', formData, config)
         .then((res) => {
           if (res.data.status === 200) {
             history.push("/profile")

@@ -9,13 +9,12 @@ const Profile = () => {
     const [data, setData] = useState(null)
     const history = useHistory();
 
-    const url = 'http://localhost:3001/api'
-
+   
     useEffect(() => {
         let token = localStorage.getItem('saving-token')
         if (token) {
             axios
-                .get(url, {
+                .get('', {
                     headers: {
                         "Authorization": token
                     }
