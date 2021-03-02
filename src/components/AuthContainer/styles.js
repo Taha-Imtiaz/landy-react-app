@@ -8,7 +8,7 @@ export const AuthContainer = styled.div`
 
   @media only screen and (max-width: 1000px) {
     display: grid;
-    grid-template-rows: minmax(100vh, min-content);
+    grid-template-rows: minmax(85vh, min-content);
     grid-template-columns: 5fr 90fr 5fr;
     grid-template-areas: ". authContainerPageArea .";
   }
@@ -22,12 +22,12 @@ export const AuthContainerPageArea = styled.div`
   @media only screen and (max-width: 1000px) {
     grid-area: authContainerPageArea;
     display: grid;
-    grid-template-rows: minmax(30vh, min-content) minmax(70vh, min-content);
+    grid-template-rows:0vh minmax(85vh, min-content);
     grid-template-columns: 1fr;
     grid-template-areas:
       "authContainerImage"
       "authContainerForm";
-      row-gap: 5em;
+      row-gap: 3rem;
       
   }
 `;
