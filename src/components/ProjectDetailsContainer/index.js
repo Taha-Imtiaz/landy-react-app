@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Input from "../../components/Input";
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import * as S from "./styles"
+import Heading from "../Heading";
 
 const ProjectDetailsContainer = (props) => {
     const projectUrl = window.location.href
@@ -161,23 +162,26 @@ const ProjectDetailsContainer = (props) => {
     return (
         <S.ProjectDetailsContainer>
             {data ?
-            <S.ProjectDetailsContainerArea>
-                <h4>Project Detail</h4>
-                <CopyToClipboard text={projectUrl}>
-                    <Button type="button" onClick={() => toast("Copied To Clipboard")}>
-                        Invite
+                <S.ProjectDetailsContainerArea>
+                    <S.ProjectDetailsContainerUpperArea>
+                        <Heading fontSize={20}>Project Detail</Heading>
+                        <CopyToClipboard text={projectUrl}>
+                            <Button type="button" onClick={() => toast("Copied To Clipboard")}>
+                                Invite
               </Button>
-                </CopyToClipboard>
-                <p>{data.name}</p>
-                <img src={data.image} />
-                <Button type="button" onClick={handleShow}>
-                    Contribute
+                        </CopyToClipboard>
+                    </S.ProjectDetailsContainerUpperArea>
+
+                    <p>{data.name}</p>
+                    <img src={data.image} />
+                    <Button type="button" onClick={handleShow}>
+                        Contribute
               </Button>
-              <Button type="button" onClick={handleShowOwner}>
-                    Add Owner
+                    <Button type="button" onClick={handleShowOwner}>
+                        Add Owner
               </Button>
-            </S.ProjectDetailsContainerArea>
-            : null}
+                </S.ProjectDetailsContainerArea>
+                : null}
             <ToastContainer />
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
