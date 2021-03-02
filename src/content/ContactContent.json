@@ -1,4 +1,4 @@
 {
     "title": "Contact Form",
-    "text": "The following form demonstrates form validation in action. Contact form component reduces the amount of time it is being re-rendered by the user as it embraces uncontrolled form validation to reduce any unnecessary performance penalty."
+    "text": "The following form is for Contact. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus facilisis nisi nec mauris blandit sagittis. Cras luctus, dui vitae finibus viverra, tellus libero tincidunt est, id vestibulum mi purus eget ex. Vivamus maximus nibh orci, et pulvinar magna eleifend ut."
 }

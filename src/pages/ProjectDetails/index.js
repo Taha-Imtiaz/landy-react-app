@@ -82,7 +82,7 @@ const ProjectDetail = (props) => {
             </div>
             : null}
 
-            <Modal show={show} onHide={handleClose}>
+            {/* <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Modal heading</Modal.Title>
                 </Modal.Header>
@@ -164,7 +164,8 @@ const ProjectDetail = (props) => {
                         Save Changes
           </Button>
                 </Modal.Footer>
-            </Modal></Fragment>
+            </Modal> */}
+            </Fragment>
     );
 };
 

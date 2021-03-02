@@ -35,7 +35,7 @@ const Home = () => {
         title={IntroContent.title}
         content={IntroContent.text}
         button={IntroContent.button}
-        icon="developer.svg"
+        icon="money-img.png"
         id="intro"
       />
       {/* Introduce Your Product Quickly / Effectively section*/}
