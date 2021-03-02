@@ -81,12 +81,81 @@ const ProjectDetail = (props) => {
               </Button>
             </div>
             : null}
-            
+
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Modal heading</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                <Modal.Body>
+                    <form>
+                        <TextField
+                            variant="outlined"
+                            className={style.styleFormFields}
+                            required
+                            fullWidth
+                            size="small"
+                            id="cardno"
+                            label="Card Number"
+                            name="number"
+                            onChange={changeHandler}
+                        />
+
+                        <p>Testing Card #: 4242424242424242</p>
+                        <div className={style.currentYear}>
+                            <div>
+                                <TextField
+                                    variant="outlined"
+                                    className={style.styleFormFields}
+                                    required
+                                    fullWidth
+                                    size="small"
+                                    id="month"
+                                    label="Month"
+                                    name="exp_month"
+                                    onChange={changeHandler}
+                                />
+                            </div>
+
+                            <div>
+                                <TextField
+                                    variant="outlined"
+                                    className={style.styleFormFields}
+                                    required
+                                    fullWidth
+                                    size="small"
+                                    id="year"
+                                    label="Year"
+                                    name="exp_year"
+                                    onChange={changeHandler}
+                                />
+                            </div>
+                        </div>
+
+                        <TextField
+                            variant="outlined"
+                            className={style.styleFormFields}
+                            required
+                            fullWidth
+                            size="small"
+                            id="name"
+                            label="CVC"
+                            name="cvc"
+                            onChange={changeHandler}
+                        />
+
+                        <TextField
+                            variant="outlined"
+                            className={style.styleFormFields}
+                            required
+                            fullWidth
+                            size="small"
+                            id="amount"
+                            label="Amount"
+                            name="amount"
+                            onChange={changeHandler}
+                        />
+                    </form>
+                </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                         Close
