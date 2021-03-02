@@ -15,11 +15,11 @@ width:100%;
 background-image: linear-gradient(rgba(0, 0 , 0, 0.9), rgba(0, 0 , 0, 0.9));
 `
 export const ProjectListItemDescriptionContent = styled.span`
-font-size: 0.9rem !important;
+font-size: 1.5rem !important;
 padding: 1rem;
 border-bottom: 2px solid rgba(0,0,0,0.1);
 font-family: sans-serif;
-
+color: #0a1f44;
 `
 
 export const ProjectCardIcons = styled.div`

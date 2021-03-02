@@ -1,4 +1,5 @@
 
+import { useEffect } from 'react'
 import IntroContent from "../../content/IntroContent.json";
 import MiddleBlockContent from "../../content/MiddleBlockContent.json";
 import AboutContent from "../../content/AboutContent.json";
@@ -11,14 +12,23 @@ import ContactForm from "../../components/ContactForm"
 import ContentBlock from "../../components/ContentBlock"
 import MiddleBlock from "../../components/MiddleBlock"
 import ScrollToTop from "../../components/ScrollToTop"
+import { useHistory } from "react-router-dom";
 
 
 const Home = () => {
+  const history = useHistory();
+  useEffect(() => {
+    let token = localStorage.getItem('saving-token')
+    if (token) {
+      history.push("/profile")
+    }
+  })
+
   return (
     <Container>
       {/* show scroll-top icon on home page */}
-     <ScrollToTop/>
-     {/* Landing page template section */}
+      <ScrollToTop />
+      {/* Landing page template section */}
       <ContentBlock
         type="right"
         first="true"
@@ -51,7 +61,7 @@ const Home = () => {
         icon="product-launch.svg"
         id="mission"
       />
-{/* thats about it section */}
+      {/* thats about it section */}
       <ContentBlock
         type="left"
         title={ProductContent.title}

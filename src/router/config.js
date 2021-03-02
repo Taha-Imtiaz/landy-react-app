@@ -15,14 +15,19 @@ const routes = [
     component: "SignUp",
   },
   {
-    path: ["/addproject"],
+    path: ["/add-project"],
     exact: true,
     component: "AddProject",
   },
   {
-    path: ["/userprofile"],
+    path: ["/profile"],
     exact: true,
     component: "Profile",
+  },
+  {
+    path: ["/project-detail/:id"],
+    exact: true,
+    component: "ProjectDetails",
   },
 ];
 

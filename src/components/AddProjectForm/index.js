@@ -1,49 +1,94 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Input from "../Input";
 import * as S from "./styles";
+import Button from "../Button";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
+import { useHistory } from "react-router-dom";
 
 const AddProjectForm = () => {
+  const history = useHistory();
+  // const url = 'https://savings-back.herokuapp.com/api/'
+  const url = 'http://localhost:3001/api'
+  let token;
+  useEffect(() => {
+    token = localStorage.getItem('saving-token')
+    if (!token) {
+      history.push("/")
+    }
+  }, [])
   const [values, setValues] = useState({
-    projectName: "",
-    savingAmount: "",
+    name: "",
+    monthlySavingAmount: "",
     targetAmount: "",
     targetDate: "",
   });
-  let handleChange  = (e) => {
-    let {name, value} = e.target;
+
+  let handleChange = (e) => {
+    let { name, value } = e.target;
     setValues({
       ...values,
       [name]: value,
     })
 
   }
+
+  let validate = () => {
+    if (!values.name || !values.monthlySavingAmount || !values.targetAmount || !values.targetDate) {
+      return false;
+    }
+    return true;
+  }
+  let handleSubmit = (e) => {
+    e.preventDefault();
+    if (validate()) {
+      let formData = new FormData();
+      formData.append('data', JSON.stringify(values));
+      const config = {
+        headers: { "Authorization": token }
+      }
+      axios
+        .post(url + '/add-project', formData, config)
+        .then((res) => {
+          if (res.data.status === 200) {
+            history.push("/profile")
+          }
+          toast(res.data.message);
+        }).catch((e) => {
+        });
+    } else {
+      toast("Please fill the valid values.");
+    }
+  };
+
   return (
     <S.AddProjectFormContainer>
-      <form>
+      <form onSubmit={handleSubmit}>
+        <ToastContainer />
         <S.AddProjectFormArea>
           <S.AddProjectFormContent>
             <S.AddProjectFormHeader>
               <h2>Add Project Form</h2>
             </S.AddProjectFormHeader>
-
             <S.AddProjectFormFields>
               <S.ProjectNameField>
                 <Input
                   type="text"
-                  name="projectName"
+                  name="name"
                   id="Project Name"
                   placeholder="Project Name"
-                  value={values.projectName || ""}
+                  value={values.name || ""}
                   onChange={handleChange}
                 />
               </S.ProjectNameField>
               <S.MonthlySavingAmount>
                 <Input
                   type="number"
-                  name="savingAmount"
+                  name="monthlySavingAmount"
                   id="Saving Amount"
-                  placeholder="Saving Amount"
-                  value={values.savingAmount || ""}
+                  placeholder="Monthly Saving Amount"
+                  value={values.monthlySavingAmount || ""}
                   onChange={handleChange}
                 />
               </S.MonthlySavingAmount>
@@ -68,6 +113,11 @@ const AddProjectForm = () => {
                   onChange={handleChange}
                 />
               </S.TargetDate>
+              <S.LoginBtn>
+                <Button type="submit">
+                  Add
+              </Button>
+              </S.LoginBtn>
             </S.AddProjectFormFields>
           </S.AddProjectFormContent>
         </S.AddProjectFormArea>

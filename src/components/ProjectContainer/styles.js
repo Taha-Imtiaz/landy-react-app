@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const ProjectContainerArea = styled.div`
 display: grid;
-grid-template-rows: 15vh minmax(40vh,min-content) 1fr;
+grid-template-rows: 5vh minmax(30vh,min-content) 1fr;
 grid-template-areas: "."
                     "projectcontaineruppercontent"
                     "projectlistcontent"

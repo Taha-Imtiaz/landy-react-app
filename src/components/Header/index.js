@@ -2,6 +2,8 @@ import { useState, Fragment } from "react";
 import { Row, Col, Drawer } from "antd";
 import { CSSTransition } from "react-transition-group";
 // import { withTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
+import { useLocation } from 'react-router-dom'
 
 import * as S from "./styles";
 import Button from "../Button";
@@ -21,6 +23,9 @@ const Header = () => {
   };
 
   const MenuItem = () => {
+    const history = useHistory();
+    const location = useLocation();
+    console.log(location.pathname)
     const scrollTo = (id) => {
       const element = document.getElementById(id);
       element.scrollIntoView({
@@ -28,26 +33,38 @@ const Header = () => {
       });
       setVisibility(false);
     };
+    const logOut = () => {
+      localStorage.clear();
+      history.push("/")
+    }
     return (
       <Fragment>
-        <S.CustomNavLinkSmall onClick={() => scrollTo("about")}>
-          <S.Span>{"About"}</S.Span>
-        </S.CustomNavLinkSmall>
-        <S.CustomNavLinkSmall onClick={() => scrollTo("mission")}>
-          <S.Span>{"Mission"}</S.Span>
-        </S.CustomNavLinkSmall>
-        <S.CustomNavLinkSmall onClick={() => scrollTo("product")}>
-          <S.Span>{"Product"}</S.Span>
-        </S.CustomNavLinkSmall>
-        <S.CustomNavLinkSmall
+        {location.pathname === '/' ? <span>
+          <S.CustomNavLinkSmall onClick={() => scrollTo("about")}>
+            <S.Span>{"About"}</S.Span>
+          </S.CustomNavLinkSmall>
+          <S.CustomNavLinkSmall onClick={() => scrollTo("mission")}>
+            <S.Span>{"Mission"}</S.Span>
+          </S.CustomNavLinkSmall>
+          <S.CustomNavLinkSmall
+            style={{ width: "180px" }}
+            onClick={() => history.push("/signin")}
+          >
+            <S.Span>
+              <Button>{"Log In"}</Button>
+            </S.Span>
+          </S.CustomNavLinkSmall>
+        </span> : null
+        }
+        {localStorage.getItem('saving-token') ? <S.CustomNavLinkSmall
           style={{ width: "180px" }}
-          onClick={() => scrollTo("contact")}
-        >
+          onClick={() => logOut()}>
           <S.Span>
-            <Button>{"Contact"}</Button>
+            <Button>{"Log Out"}</Button>
           </S.Span>
-        </S.CustomNavLinkSmall>
-      </Fragment>
+        </S.CustomNavLinkSmall> : null}
+
+      </Fragment >
     );
   };
 
@@ -56,7 +73,8 @@ const Header = () => {
       <S.Container>
         <Row type="flex" justify="space-between" gutter={20}>
           <S.LogoContainer to="/" aria-label="homepage">
-            <SvgIcon src="logo.svg" />
+            {/* <SvgIcon src="logo.svg" /> */}
+            <img src='/img/logo.png' width="80px" />
           </S.LogoContainer>
           <S.NotHidden>
             {/* show nav on a large screen */}

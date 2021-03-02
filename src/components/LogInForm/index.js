@@ -3,8 +3,16 @@ import { Link } from "react-router-dom";
 import Button from "../Button";
 import Input from "../Input";
 import * as S from "./styles";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
+import { useHistory } from "react-router-dom";
 
 const LogInForm = () => {
+  const history = useHistory();
+  // const url = 'https://savings-back.herokuapp.com/api/'
+  const url = 'http://localhost:3001/api'
+
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -16,13 +24,37 @@ const LogInForm = () => {
       [name]: value,
     });
   };
+  let validate = () => {
+    if (!values.email || !values.password) {
+      return false;
+    }
+    return true;
+  }
   let handleSubmit = (e) => {
     e.preventDefault();
     let { email, password } = values;
-    console.log(email, password);
+    if (validate()) {
+      console.log(email, password);
+      axios
+        .post(url + '/login', {
+          ...values,
+        })
+        .then((res) => {
+          if (res.data.status === 200) {
+            localStorage.setItem('saving-token', res.data.token)
+            history.push("/profile")
+          }
+          toast(res.data.message);
+          // setShouldSubmit(true);
+        }).catch((e) => {
+        });
+    } else {
+      toast("Please fill the valid values.");
+    }
   };
   return (
     <S.AuthFormContainer>
+      <ToastContainer />
       <form onSubmit={handleSubmit}>
         <S.AuthFormArea>
           <S.LoginHeader>

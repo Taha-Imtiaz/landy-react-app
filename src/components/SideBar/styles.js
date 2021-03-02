@@ -25,7 +25,8 @@ grid-template-areas: "userpic"
 export const UserImage = styled.div`
 grid-area: userpic;
 position:absolute;
-transform: translate(7.5%,-40%);
+transform: translate(25%,-35%);
+
 `
 export const UserInfoDescription = styled.div`
 grid-area: userinfodescription;
@@ -37,9 +38,9 @@ grid-template-rows: repeat(auto-fit,minmax(min-content, 7vh));
 `
 export const UserDescriptionRow = styled.div`
 display:grid;
-grid-template-columns: 40fr 60fr;
+grid-template-columns: 30fr 100fr;
 font-family:sans-serif;
-padding-left: 2rem;
+padding-left: 1rem;
 align-items:center;
 
 `

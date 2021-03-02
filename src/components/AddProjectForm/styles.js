@@ -35,7 +35,8 @@ export const AddProjectFormFields = styled.div`
     ". projectnamefield ."
     ". monthlysavingamount ."
     ". targetamount ."
-    ". targetdate . ";
+    ". targetdate . "
+    ". loginbtn . ";
   row-gap: 0.25rem;
 `;
 export const ProjectNameField = styled.div`
@@ -58,6 +59,12 @@ export const TargetAmount = styled.div`
 `;
 export const TargetDate = styled.div`
   grid-area: targetdate;
+  display: grid;
+  grid-template-rows: 1fr;
+  height: 100%;
+`;
+export const LoginBtn = styled.div`
+  grid-area: loginbtn;
   display: grid;
   grid-template-rows: 1fr;
   height: 100%;
