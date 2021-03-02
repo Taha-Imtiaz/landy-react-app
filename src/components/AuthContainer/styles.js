@@ -28,6 +28,7 @@ export const AuthContainerPageArea = styled.div`
       "authContainerImage"
       "authContainerForm";
       row-gap: 5em;
+      
   }
 `;
 export const AuthContainerImage = styled.div`
