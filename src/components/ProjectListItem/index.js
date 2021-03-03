@@ -8,8 +8,7 @@ import Paragraph from '../Paragraph';
 const ProjectListItem = (props) => {
     let data = props.data;
     return (
-        // <Link to={`/project-detail/${data._id}`}>
-        <S.ProjectListItemLinkWrapper to = {`/project-detail/${data._id}`}>
+        <Link to={`/project-detail/${data._id}`}>
             <S.ProjectListItemContentContainer>
             <S.ProjectListItemContent>
                 <S.ProjectListItemUpperContent>
@@ -26,9 +25,9 @@ const ProjectListItem = (props) => {
                 </S.ProjectListItemDescriptionContent>
                 <S.ProjectStatusInfo>
 
-                    <Paragraph  fontSize = {10} > {data.status}</Paragraph>
+                    <Paragraph fontSize = {10}> {data.status}</Paragraph>
 
-                    <Paragraph fontSize = {10} >{new Date(data.targetDate).toDateString()}</Paragraph> 
+                    <Paragraph fontSize = {10}>{new Date(data.targetDate).toDateString()}</Paragraph> 
                 </S.ProjectStatusInfo>
 
                 </S.ProjectListItemUpperContent>
@@ -60,9 +59,12 @@ const ProjectListItem = (props) => {
                 </S.ProjectCardFooter>
             </S.ProjectListItemContent>
             </S.ProjectListItemContentContainer>
-            </S.ProjectListItemLinkWrapper>
-        // </Link>
+        </Link>
     )
 }
 
 export default ProjectListItem
+
+
+
+

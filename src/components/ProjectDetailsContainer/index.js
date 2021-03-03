@@ -11,6 +11,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import * as S from "./styles";
 import Heading from "../Heading";
 import Paragraph from "../Paragraph";
+import ProjectInfoCard from "../ProjectInfoCard";
 
 const ProjectDetailsContainer = (props) => {
   const projectUrl = window.location.href;
@@ -40,7 +41,7 @@ const ProjectDetailsContainer = (props) => {
           setData(res.data.data);
         }
       })
-      .catch((e) => {});
+      .catch((e) => { });
     loadStripe();
   }, []);
 
@@ -130,7 +131,7 @@ const ProjectDetailsContainer = (props) => {
                 }
                 toast(res.data.message);
               })
-              .catch((e) => {});
+              .catch((e) => { });
           }
         }
       );
@@ -161,10 +162,9 @@ const ProjectDetailsContainer = (props) => {
           }
           toast(res.data.message);
         })
-        .catch((e) => {});
+        .catch((e) => { });
     }
   };
-
   return (
     <S.ProjectDetailsContainer>
       {data ? (
@@ -183,37 +183,58 @@ const ProjectDetailsContainer = (props) => {
 
           <S.ProjectDetailsContainerLowerArea>
             <S.ProjectInfoContainer>
-              <S.ProjectImg src={data.image}></S.ProjectImg>
-              <S.ProjectInfoCard></S.ProjectInfoCard>
+
+              <S.ProjectInfoCard>
+                <ProjectInfoCard data={data} />
+              </S.ProjectInfoCard>
+
+              <S.ProjectOwnerInfo>
+                <S.AddOwnerBtn>
+                  <Heading fontSize={20}>Owners</Heading>
+
+                  <Button type="button" onClick={handleShowOwner}>
+                    Add Owner
+                  </Button>
+                </S.AddOwnerBtn>
+
+                {data.owner.map((ownerObj) =>
+
+                  <S.ProjectOwnerInfoContent>
+                    <S.ProjectOwnerImage><S.ImageArea src="https://res.cloudinary.com/dz8zgvu8s/image/upload/v1570542639/user1.jpg" /></S.ProjectOwnerImage>
+                    <S.ProjectOwnerName>
+                      <Paragraph fontSize={14}>
+                        {ownerObj.name}
+                      </Paragraph>
+                      <Paragraph fontSize={14}>
+                        {ownerObj.email}
+                      </Paragraph>
+                    </S.ProjectOwnerName>
+
+                  </S.ProjectOwnerInfoContent>
+
+                )}
+
+              </S.ProjectOwnerInfo>
             </S.ProjectInfoContainer>
 
-            <S.ProjectOwnerInfo>
-              <S.ProjectOwnerImage></S.ProjectOwnerImage>
-              <S.ProjectOwnerName>
-                <Paragraph>
-                {data.name}
-                </Paragraph>
-              </S.ProjectOwnerName>
-            </S.ProjectOwnerInfo>
+
 
             <S.ProjectDetailsContainerButtons>
               <S.ProjectDetailsContainerButtonsArea>
-            <Button type="button" onClick={handleShowOwner}>
-            Add Owner
-          </Button>
-          <Button type="button" onClick={handleShow}>
-            Contribute
+
+                <Button type="button" onClick={handleShow}>
+                  Contribute
           </Button>
 
-          <CopyToClipboard text={projectUrl}>
-              <Button
-                type="button"
-                onClick={() => toast("Copied To Clipboard")}
-              >
-                Invite
+                <CopyToClipboard text={projectUrl}>
+                  <Button
+                    type="button"
+                    onClick={() => toast("Copied To Clipboard")}
+                  >
+                    Invite
               </Button>
-            </CopyToClipboard>
-            </S.ProjectDetailsContainerButtonsArea>
+                </CopyToClipboard>
+              </S.ProjectDetailsContainerButtonsArea>
             </S.ProjectDetailsContainerButtons>
           </S.ProjectDetailsContainerLowerArea>
           {/* <p>{data.name}</p>

@@ -3,7 +3,7 @@ import * as S from "./styles";
 
 
 // reusable input field
-const Input = ({ id,type, name, placeholder, onChange }) => (
+const Input = ({ id,type, name, value, placeholder, onChange }) => (
   <S.Container>
     <label htmlFor={name}>{id}</label>
     <S.Input
@@ -13,6 +13,7 @@ const Input = ({ id,type, name, placeholder, onChange }) => (
       name={name}
       id={name}
       onChange={onChange}
+      value = {value}
     />
   </S.Container>
 );

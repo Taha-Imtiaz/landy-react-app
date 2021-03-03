@@ -26,23 +26,19 @@ align-items: center;
 export const ProjectDetailsContainerLowerArea = styled.div`
 grid-area: projectdetailscontainerlowerarea;
 display: grid;
-grid-template-rows:  1fr 10vh minmax(10vh,min-content);
+grid-template-rows:  1fr minmax(10vh,min-content);
+grid-template-columns: 1fr;
 row-gap: 3rem;
 padding-bottom: 1rem;
 `
 export const ProjectInfoContainer = styled.div`
 display: grid;
-grid-template-rows: minmax(60vh,min-content);
-grid-template-columns: repeat(2, 1fr);
-column-gap: 0.5rem;
+grid-template-rows:  minmax(80vh,min-content);
+grid-template-columns: 60fr 30fr;
+column-gap: 2rem;
+`
 
-`
-export const ProjectImg = styled.img`
-width: 100%;
-height: 100%;
-`
 export const ProjectInfoCard = styled.div`
-background: lightgreen;
 display: grid;
 grid-template- columns: 1fr;
 `
@@ -51,19 +47,49 @@ grid-template- columns: 1fr;
 
 export const ProjectOwnerInfo = styled.div`
 display: grid;
-grid-template-columns: min-content 1fr;
-grid-template-areas: "ownerimage ownername";
-column-gap: 2rem;
+grid-template-columns: 1fr;
+// grid-template-rows: minmax(30vh,min-content) minmax(10vh,min-content);
+// grid-template-areas: "ownerinfocontent"
+//                          "addownerbtn";
+grid-auto-rows: 15vh;
+row-gap: 2rem;
+
+
 `
-export const ProjectOwnerImage = styled.div`
-grid-area: ownerimage;
+export const AddOwnerBtn = styled.div`
 display: grid;
+grid-template-columns: 70fr 30fr;
+align-items: center;
+`
+export const ProjectOwnerInfoContent = styled.div`
+// grid-area: ownerinfocontent;
+display: grid;
+grid-template-rows: repeat(auto-fit, minmax(8vh,min-content));
+grid-template-columns: .2fr .8fr;
+
+//  grid-template-areas: "ownerimage ownername";
+column-gap:2rem;
+border-bottom 1px solid #a8a8a8;
+`
+
+export const ProjectOwnerImage = styled.div`
+// grid-area: ownerimage;
+display: grid;
+align-items: center;
+// grid-row: 1/span 2;
+`
+export const ImageArea = styled.img`
+width:8vh;
+height:8vh;
+border-radius: 50%;
 
 `
 export const ProjectOwnerName = styled.div`
-grid-area:ownername;
+// grid-area:ownername;
 display:grid;
+
 `
+
 export const ProjectDetailsContainerButtons = styled.div`
 display: grid;
 grid-template-columns: 25fr 50fr 25fr;
@@ -72,6 +98,6 @@ grid-template-areas: ". projectdetailscontainerbuttonsarea .";
 export const ProjectDetailsContainerButtonsArea = styled.div`
 grid-area: projectdetailscontainerbuttonsarea;
 display: grid;
-grid-template-columns: repeat(3,1fr);
+grid-template-columns: repeat(2,1fr);
 column-gap:0.5rem;
 `

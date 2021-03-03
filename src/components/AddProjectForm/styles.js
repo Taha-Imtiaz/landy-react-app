@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const AddProjectFormContainer = styled.div`
   display: grid;
-  grid-template-rows: minmax(70vh, min-content);
+  grid-template-rows: minmax(85vh, min-content);
   grid-template-areas: "addprojectformarea";
 `;
 export const AddProjectFormArea = styled.div`
   grid-area: addprojectformarea;
   display: grid;
-  grid-template-rows: minmax(5vh, min-content) minmax(60vh, min-content) minmax(5vh, min-content);
+  grid-template-rows: 7.5vh minmax(70vh, min-content) 7.5vh;
   grid-template-columns: 1fr;
   grid-template-areas:
     "."
@@ -18,7 +18,7 @@ export const AddProjectFormArea = styled.div`
 export const AddProjectFormContent = styled.div`
   grid-area: addprojectformcontent;
   display: grid;
-  grid-template-rows: minmax(20vh, min-content) minmax(40vh, min-content);
+  grid-template-rows: 10vh 60vh;
 
 
 `;
@@ -29,7 +29,7 @@ export const AddProjectFormHeader = styled.div`
 `;
 export const AddProjectFormFields = styled.div`
   display: grid;
-  grid-template-rows: repeat(4, minmax(10vh, min-content));
+  grid-template-rows: repeat(5, 12vh);
   grid-template-columns: 25fr 50fr 25fr;
   grid-template-areas:
     ". projectnamefield ."
