@@ -7,8 +7,8 @@ import axios from 'axios';
 import * as serviceWorker from "./serviceWorker";
 import App from "./App";
 
-// axios.defaults.baseURL = 'https://savings-back.herokuapp.com/api'
-axios.defaults.baseURL = 'http://localhost:3001/api'
+axios.defaults.baseURL = 'https://savings-back.herokuapp.com/api'
+// axios.defaults.baseURL = 'http://localhost:3001/api'
 
 ReactDOM.render(
   <BrowserRouter>

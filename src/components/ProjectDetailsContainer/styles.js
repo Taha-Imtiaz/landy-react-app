@@ -36,11 +36,17 @@ display: grid;
 grid-template-rows:  minmax(80vh,min-content);
 grid-template-columns: 60fr 30fr;
 column-gap: 2rem;
+@media only screen and (max-width: 1000px) {
+    display: grid;
+grid-template-rows:  minmax(60vh,min-content) minmax(40vh,min-content);
+grid-template-columns:1fr;
+row-gap: 2rem;
+}
 `
 
 export const ProjectInfoCard = styled.div`
 display: grid;
-grid-template- columns: 1fr;
+grid-template-columns: 1fr;
 `
 
 // remaining card css here
@@ -60,7 +66,14 @@ export const AddOwnerBtn = styled.div`
 display: grid;
 grid-template-columns: 70fr 30fr;
 align-items: center;
+@media only screen and (max-width: 500px) {
+    display: grid;
+grid-template-columns: 60fr 40fr;
+align-items: center;
+
+}
 `
+
 export const ProjectOwnerInfoContent = styled.div`
 // grid-area: ownerinfocontent;
 display: grid;
@@ -94,6 +107,12 @@ export const ProjectDetailsContainerButtons = styled.div`
 display: grid;
 grid-template-columns: 25fr 50fr 25fr;
 grid-template-areas: ". projectdetailscontainerbuttonsarea .";
+@media only screen and (max-width: 500px) {
+    display: grid;
+grid-template-columns: 15fr 70fr 15fr;
+grid-template-areas: ". projectdetailscontainerbuttonsarea .";
+
+}
 `
 export const ProjectDetailsContainerButtonsArea = styled.div`
 grid-area: projectdetailscontainerbuttonsarea;

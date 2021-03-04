@@ -18,6 +18,14 @@ grid-template-rows: 20vh  minmax(40vh, min-content) minmax(10vh, min-content);
 grid-template-columns: 35vw;
 justify-content:center;
 padding: 1rem 0;
+@media only screen and (max-width: 500px) {
+    grid-area: projectinfocardcontentarea;
+display: grid;
+grid-template-rows: 20vh  minmax(40vh, min-content) minmax(10vh, min-content);
+grid-template-columns: 50vw;
+justify-content:center;
+padding: 1rem 0;
+}
 `
 export const ProjectImageArea = styled.div`
 display: grid;
@@ -41,4 +49,5 @@ export const ProjectInfoCardEditBtn = styled.div`
 display: grid;
 grid-template-rows:1fr;
 grid-template-columns: 1fr;
+width: 100% !important;
 `

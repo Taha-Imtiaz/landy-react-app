@@ -52,6 +52,9 @@ html {
     span {
         color: #343D48;
         font-size: 1.125rem;
+        @media only screen and (max-width:400px) {
+            font-size:0.75rem;
+        }
     }
 
     a {

@@ -114,7 +114,7 @@ const ProjectInfoCard = ({data}) => {
                  />
                 </S.ProjectInfoCardContentAreaInput>
                 <S.ProjectInfoCardEditBtn>
-                 <Button>Edit</Button>   
+                 <Button width = "100%">Edit</Button>   
                 </S.ProjectInfoCardEditBtn>
 
 

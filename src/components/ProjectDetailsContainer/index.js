@@ -202,10 +202,10 @@ const ProjectDetailsContainer = (props) => {
                   <S.ProjectOwnerInfoContent>
                     <S.ProjectOwnerImage><S.ImageArea src="https://res.cloudinary.com/dz8zgvu8s/image/upload/v1570542639/user1.jpg" /></S.ProjectOwnerImage>
                     <S.ProjectOwnerName>
-                      <Paragraph fontSize={14}>
+                      <Paragraph fontSize={12}>
                         {ownerObj.name}
                       </Paragraph>
-                      <Paragraph fontSize={14}>
+                      <Paragraph fontSize={12}>
                         {ownerObj.email}
                       </Paragraph>
                     </S.ProjectOwnerName>

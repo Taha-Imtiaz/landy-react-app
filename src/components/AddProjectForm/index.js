@@ -72,7 +72,7 @@ const AddProjectForm = () => {
         <S.AddProjectFormArea>
           <S.AddProjectFormContent>
             <S.AddProjectFormHeader>
-              <Heading fontSize={26} fontWeight="bold" color="#0a1f44" >Add Project Form</Heading>
+              <Heading fontSize={22} fontWeight="bold" color="#0a1f44" >Add Project Form</Heading>
             </S.AddProjectFormHeader>
             <S.AddProjectFormFields>
               <S.ProjectNameField>
