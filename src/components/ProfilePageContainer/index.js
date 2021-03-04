@@ -6,8 +6,6 @@ import * as S from './styles'
 
 const ProfilePageContainer = (props) => {
     let data = props.data;
-    console.log(data)
-    console.log(data.doughnutChart)
   
     return (
         <S.ProfilePageContainer>
