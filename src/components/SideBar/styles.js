@@ -48,7 +48,7 @@ export const RowItem = styled.p`
 color: #fff;
 font-family: sans-serif;
 font-size: 0.9rem;
-@media only screen and (max-width: 1150px) {
+@media only screen and (max-width: 1350px) {
 font-size: 0.75rem;
 
 }

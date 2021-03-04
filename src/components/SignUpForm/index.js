@@ -4,7 +4,7 @@ import Button from "../Button";
 import Heading from "../Heading";
 import Input from "../Input";
 import * as S from "./styles";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
@@ -32,7 +32,6 @@ const SignUpForm = () => {
   }
   let handleSubmit = (e) => {
     e.preventDefault();
-    let { name, email, password } = values;
     if (validate()) {
       axios
         .post('', {
@@ -99,7 +98,7 @@ const SignUpForm = () => {
             </S.SignUpBtn>
           </S.SignUpFormFields>
           <S.FormText>
-            <span>Already have an account? </span>
+            <S.FormTextSpan>Already have an account? </S.FormTextSpan>
             <Link to="/signin">Login</Link>
           </S.FormText>{" "}
         </S.AuthFormArea>{" "}

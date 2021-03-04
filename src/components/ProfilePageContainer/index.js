@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import ProjectContainer from '../ProjectContainer'
 import SideBar from '../SideBar'
 import * as S from './styles'

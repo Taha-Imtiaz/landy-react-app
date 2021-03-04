@@ -1,5 +1,4 @@
 import React from 'react'
-import SvgIcon from '../SvgIcon'
 import * as S from "./styles"
 
 const SideBar = (props) => {

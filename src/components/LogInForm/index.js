@@ -4,7 +4,7 @@ import Button from "../Button";
 import Heading from "../Heading";
 import Input from "../Input";
 import * as S from "./styles";
-import { ToastContainer, toast } from 'react-toastify';
+import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
@@ -91,7 +91,7 @@ const LogInForm = () => {
           </S.LoginFormFields>
 
           <S.FormText>
-            <span>Don't have account?</span>
+            <S.FormTextSpan>Don't have account?</S.FormTextSpan>
             <Link to="/signup">SignUp</Link>
           </S.FormText>
         </S.AuthFormArea>

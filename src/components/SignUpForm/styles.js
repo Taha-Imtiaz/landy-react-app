@@ -59,3 +59,8 @@ export const FormText = styled.div`
   justify-content: center;
   gap: 0.4rem;
 `;
+export const FormTextSpan = styled.span`
+@media (max-width:400px) {
+  font-size: 0.75rem;
+}
+`

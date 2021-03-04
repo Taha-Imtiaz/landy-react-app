@@ -7,7 +7,6 @@ import { useLocation } from 'react-router-dom'
 
 import * as S from "./styles";
 import Button from "../Button";
-import SvgIcon from "../SvgIcon";
 
 const Header = () => {
   const [isNavVisible] = useState(false);

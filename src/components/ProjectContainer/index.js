@@ -1,5 +1,4 @@
 import React from 'react'
-import Paragraph from '../Paragraph'
 import ProjectList from '../ProjectList'
 import * as S from './styles'
 import {

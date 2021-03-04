@@ -1,6 +1,5 @@
 import React, { useEffect, useState, Fragment } from 'react'
 import ProfilePageContainer from '../../components/ProfilePageContainer'
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { useHistory } from "react-router-dom";

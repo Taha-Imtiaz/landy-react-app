@@ -32,6 +32,7 @@ const RightBlock = ({ title, content, button, icon, t, id }) => {
                   button.map((item, id) => {
                     return (
                       <Button
+                      style= {{margin: "0 0.3rem"}}
                         key={id}
                         color={item.color}
                         width="true"
