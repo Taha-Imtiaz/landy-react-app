@@ -165,6 +165,21 @@ const ProjectDetailsContainer = (props) => {
         .catch((e) => { });
     }
   };
+
+  const deleteProject = () => {
+
+
+    axios
+      .get("/delete/" + data._id)
+      .then((res) => {
+        if (res.data.status === 200) {
+          // localStorage.setItem('saving-token', res.data.token)
+          history.push("/profile")
+        }
+        toast(res.data.message);
+      })
+      .catch((e) => { });
+  }
   return (
     <S.ProjectDetailsContainer>
       {data ? (
@@ -234,7 +249,7 @@ const ProjectDetailsContainer = (props) => {
                     Invite
               </Button>
                 </CopyToClipboard>
-                <Button>Delete</Button>
+                <Button type="button" onClick={deleteProject}>Delete</Button>
               </S.ProjectDetailsContainerButtonsArea>
             </S.ProjectDetailsContainerButtons>
           </S.ProjectDetailsContainerLowerArea>
