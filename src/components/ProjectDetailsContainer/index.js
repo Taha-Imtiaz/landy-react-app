@@ -234,6 +234,7 @@ const ProjectDetailsContainer = (props) => {
                     Invite
               </Button>
                 </CopyToClipboard>
+                <Button>Delete</Button>
               </S.ProjectDetailsContainerButtonsArea>
             </S.ProjectDetailsContainerButtons>
           </S.ProjectDetailsContainerLowerArea>

@@ -105,7 +105,7 @@ display:grid;
 
 export const ProjectDetailsContainerButtons = styled.div`
 display: grid;
-grid-template-columns: 25fr 50fr 25fr;
+grid-template-columns: 30fr 40fr 30fr;
 grid-template-areas: ". projectdetailscontainerbuttonsarea .";
 @media only screen and (max-width: 500px) {
     display: grid;
@@ -117,6 +117,6 @@ grid-template-areas: ". projectdetailscontainerbuttonsarea .";
 export const ProjectDetailsContainerButtonsArea = styled.div`
 grid-area: projectdetailscontainerbuttonsarea;
 display: grid;
-grid-template-columns: repeat(2,1fr);
+grid-template-columns: repeat(3,1fr);
 column-gap:0.5rem;
 `
