@@ -57,7 +57,7 @@ const Header = () => {
         </span> : null
         }
         {localStorage.getItem('saving-token') ? <S.CustomNavLinkSmall
-          // style={{ width: "180px" }}
+          style={{ width: "180px" }}
           onClick={() => logOut()}>
           <S.Span>
             <Button>{"Log Out"}</Button>
@@ -96,14 +96,14 @@ const Header = () => {
         >
           <Drawer closable={false} visible={visible} onClose={onClose}>
             <Col 
-            // style={{ marginBottom: "2.5rem" }}
+            style={{ marginBottom: "2.5rem" }}
             >
               <S.Label onClick={onClose}>
                 <Col span={12}>
                   <S.Menu>Menu</S.Menu>
                 </Col>
-                <Col span={12}>
-                  <S.Outline  />
+                <Col span={12} >
+                  <S.Outline  padding="true" />
                 </Col>
               </S.Label>
             </Col>
