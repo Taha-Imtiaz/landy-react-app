@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, Fragment, useState } from "react";
 import { useHistory, withRouter } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -341,7 +341,7 @@ const ProjectDetailsContainer = (props) => {
       {/* Add onwer modal */}
       <Modal show={showOwner} onHide={handleCloseOwner}>
         <Modal.Header closeButton>
-          <Modal.Title>Contribute</Modal.Title>
+          <Modal.Title>Add Owner</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <form>

@@ -44,7 +44,7 @@ const LogInForm = () => {
             localStorage.setItem('saving-token', res.data.token)
             history.push("/profile")
           }
-          toast(res.data.message);
+          // toast(res.data.message);
           // setShouldSubmit(true);
         }).catch((e) => {
         });
